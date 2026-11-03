@@ -1,0 +1,2864 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Brew House — Café, Bites & Good Vibes | Ghaziabad</title>
+    <meta
+      name="description"
+      content="A cozy café in Ghaziabad, where great food meets good vibes. Explore our handcrafted pizzas, pastas, snacks, and artisanal beverages."
+    />
+    <meta property="og:title" content="The Brew House — Café, Bites & Good Vibes" />
+    <meta
+      property="og:description"
+      content="A cozy café in Ghaziabad, where great food meets good vibes. Explore our handcrafted pizzas, pastas, snacks, and artisanal beverages."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+        --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+        /* Light Mode Palette */
+        --color-espresso: #3f1d0b;
+        --color-espresso-soft: #4e2712;
+        --color-body-text: #3d1c0a;
+        --color-subtitle: #69412b;
+        --color-kicker: #7c3516;
+        --color-line: #d6b293;
+        --color-symbol: #c56330;
+        --color-pin: #5b260e;
+        --color-star: #d96b27;
+        --color-terracotta: #a63409;
+        --color-terracotta-warm: #b34818;
+        --color-terracotta-light: #c85a23;
+        --color-tan-btn: #e59455;
+        --color-tan-btn-text: #3b1909;
+        --color-footer-bg: #5a2914;
+        --color-footer-text: #f8e8d8;
+
+        --bg-header: #faebdb;
+        --bg-header-scrolled: rgba(250, 235, 219, 0.96);
+        --bg-hero-left: #f8e6d5;
+        --bg-menu: #fbeee2;
+        --bg-about: #fcefe1;
+        --bg-wave: #f6e1cb;
+        --bg-testimonials: #f8e7d7;
+        --bg-testimonial-card: #faf6ee;
+        --bg-faq: #faeee1;
+        --bg-faq-item: #fcf7f1;
+        --bg-faq-hover: #f8ede1;
+        --border-faq: #ead8c6;
+        --border-section: #edd8c4;
+
+        --bg-modal: #fdf6ee;
+        --bg-modal-card: #fffaf4;
+        --border-modal: #ead5c0;
+        --bg-tab: #f3e3d3;
+        --text-tab: #542812;
+      }
+
+      html[data-theme='dark'],
+      html.dark {
+        /* Dark Mode Palette — Rich Roasted Espresso & Warm Amber Gold */
+        --color-espresso: #faebe0;
+        --color-espresso-soft: #ead0bc;
+        --color-body-text: #eed8c7;
+        --color-subtitle: #cfa88c;
+        --color-kicker: #f09a63;
+        --color-line: #6e452c;
+        --color-symbol: #f4975c;
+        --color-pin: #f4975c;
+        --color-star: #ff9c47;
+        --color-terracotta: #d45622;
+        --color-terracotta-warm: #e87743;
+        --color-terracotta-light: #d9662f;
+        --color-tan-btn: #f0a062;
+        --color-tan-btn-text: #240f05;
+        --color-footer-bg: #120804;
+        --color-footer-text: #f5e2d0;
+
+        --bg-header: #1c0f09;
+        --bg-header-scrolled: rgba(28, 15, 9, 0.96);
+        --bg-hero-left: #1c0f09;
+        --bg-menu: #21120b;
+        --bg-about: #1a0e08;
+        --bg-wave: #29160d;
+        --bg-testimonials: #24140c;
+        --bg-testimonial-card: #301b11;
+        --bg-faq: #1d100a;
+        --bg-faq-item: #2b180f;
+        --bg-faq-hover: #361f14;
+        --border-faq: #4a2c1d;
+        --border-section: #3b2216;
+
+        --bg-modal: #24140c;
+        --bg-modal-card: #301b11;
+        --border-modal: #4a2c1d;
+        --bg-tab: #382014;
+        --text-tab: #f2dccb;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-family: var(--font-sans);
+        color: var(--color-espresso);
+        background-color: var(--bg-header);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-color: var(--bg-header);
+        color: var(--color-espresso);
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font-family: inherit;
+        color: inherit;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible {
+        outline: 2px solid var(--color-terracotta-warm);
+        outline-offset: 2px;
+      }
+
+      /* =========================================================
+         1. HEADER / TOP BAR
+         ========================================================= */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background-color: var(--bg-header);
+        border-bottom: 1px solid rgba(180, 120, 80, 0.14);
+        transition: box-shadow 0.2s ease, background-color 0.2s ease;
+      }
+
+      .site-header.scrolled {
+        background-color: var(--bg-header-scrolled);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      .header-inner {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 8px 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--color-espresso);
+        flex-shrink: 0;
+      }
+
+      .brand-logo-img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        display: block;
+        transition: filter 0.2s ease;
+      }
+
+      html[data-theme='dark'] .brand-logo-img,
+      html.dark .brand-logo-img {
+        filter: brightness(0) invert(0.93) sepia(0.18) saturate(0.45) hue-rotate(335deg);
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-title {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 1.03;
+        color: var(--color-espresso);
+        letter-spacing: -0.01em;
+      }
+
+      .brand-subtitle {
+        margin-top: 2px;
+        font-family: var(--font-sans);
+        font-size: 8.5px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--color-subtitle);
+        white-space: nowrap;
+      }
+
+      .primary-nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-left: auto;
+      }
+
+      .nav-link {
+        position: relative;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-body-text);
+        padding: 5px 0;
+        white-space: nowrap;
+        transition: color 0.18s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--color-terracotta-warm);
+      }
+
+      .nav-link.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background-color: var(--color-terracotta-warm);
+        border-radius: 2px;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-shrink: 0;
+      }
+
+      .header-divider {
+        width: 1px;
+        height: 26px;
+        background-color: var(--color-line);
+      }
+
+      /* Theme Toggle Button */
+      .theme-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--color-line);
+        background-color: rgba(180, 90, 40, 0.08);
+        color: var(--color-body-text);
+        font-size: 12.5px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+      }
+
+      .theme-toggle-btn:hover {
+        background-color: rgba(200, 90, 35, 0.18);
+        color: var(--color-terracotta-warm);
+      }
+
+      .theme-icon {
+        color: var(--color-symbol);
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .theme-icon-sun {
+        display: none;
+      }
+
+      html[data-theme='dark'] .theme-icon-moon,
+      html.dark .theme-icon-moon {
+        display: none;
+      }
+
+      html[data-theme='dark'] .theme-icon-sun,
+      html.dark .theme-icon-sun {
+        display: inline-block;
+        color: #ffb259;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        padding: 6px;
+        color: var(--color-espresso);
+      }
+
+      .mobile-nav-drawer {
+        background-color: var(--bg-header);
+        border-bottom: 1px solid var(--border-section);
+        padding: 12px 24px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .mobile-nav-drawer[hidden] {
+        display: none !important;
+      }
+
+      .mobile-nav-link {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--color-espresso);
+        padding: 6px 0;
+      }
+
+      /* =========================================================
+         2. HERO SECTION
+         ========================================================= */
+      .hero-section {
+        position: relative;
+        width: 100%;
+        background-color: var(--bg-hero-left);
+        overflow: hidden;
+      }
+
+      .hero-backdrop {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        line-height: 0;
+      }
+
+      .hero-bg-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .hero-dark-scrim {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(28, 15, 9, 0.96) 0%,
+          rgba(28, 15, 9, 0.9) 42%,
+          rgba(28, 15, 9, 0.25) 68%,
+          rgba(28, 15, 9, 0.1) 100%
+        );
+        transition: opacity 0.25s ease;
+      }
+
+      html[data-theme='dark'] .hero-dark-scrim,
+      html.dark .hero-dark-scrim {
+        opacity: 1;
+      }
+
+      .hero-content-wrap {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+        pointer-events: none;
+      }
+
+      .hero-text-box {
+        max-width: 480px;
+        pointer-events: auto;
+        margin-top: -4px;
+      }
+
+      .hero-welcome-row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 2px;
+      }
+
+      .welcome-burst {
+        position: absolute;
+        left: -44px;
+        top: -8px;
+        width: 34px;
+        height: 34px;
+        color: var(--color-symbol);
+      }
+
+      .welcome-italic {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 500;
+        font-size: 24px;
+        color: var(--color-espresso);
+      }
+
+      .welcome-line {
+        width: 68px;
+        height: 1px;
+        background-color: var(--color-line);
+        margin-top: 4px;
+      }
+
+      .hero-title {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: clamp(38px, 4.4vw, 56px);
+        line-height: 1.06;
+        color: var(--color-espresso);
+        letter-spacing: -0.015em;
+        margin-bottom: 10px;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: clamp(16px, 1.5vw, 19px);
+        line-height: 1.42;
+        color: var(--color-espresso-soft);
+        margin-bottom: 18px;
+      }
+
+      .btn-primary-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        background-color: var(--color-terracotta);
+        color: #ffffff;
+        font-family: var(--font-sans);
+        font-size: 13.5px;
+        font-weight: 600;
+        padding: 10px 22px;
+        border-radius: 999px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(161, 34, 0, 0.22);
+        transition: transform 0.16s ease, background-color 0.16s ease;
+      }
+
+      .btn-primary-pill:hover {
+        background-color: var(--color-terracotta-warm);
+        transform: translateY(-1px);
+      }
+
+      /* =========================================================
+         SHARED SECTION HEADERS
+         ========================================================= */
+      .section-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 56px;
+        position: relative;
+      }
+
+      .section-kicker-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-bottom: 4px;
+      }
+
+      .section-kicker {
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        color: var(--color-kicker);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .kicker-line {
+        width: 66px;
+        height: 1px;
+        background-color: var(--color-line);
+      }
+
+      .section-heading {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 31px;
+        line-height: 1.18;
+        color: var(--color-espresso);
+        text-align: center;
+        letter-spacing: -0.01em;
+      }
+
+      .underline-word {
+        text-decoration: underline;
+        text-decoration-color: var(--color-terracotta-warm);
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1.5px;
+      }
+
+      /* =========================================================
+         3. OUR MENU SECTION
+         ========================================================= */
+      .menu-section {
+        background-color: var(--bg-menu);
+        padding: 16px 0 18px;
+        width: 100%;
+      }
+
+      .menu-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 980px;
+        margin: 10px auto 12px;
+        align-items: end;
+      }
+
+      .menu-category-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2px;
+        border-radius: 14px;
+        transition: transform 0.18s ease;
+      }
+
+      .menu-category-card:hover {
+        transform: translateY(-3px);
+      }
+
+      .menu-plate-wrap {
+        height: 128px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+      }
+
+      .menu-plate-wrap-beverage {
+        height: 138px;
+        margin-top: -10px;
+      }
+
+      .menu-plate-img {
+        max-height: 125px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .menu-plate-img-beverage {
+        max-height: 138px;
+      }
+
+      .menu-category-name {
+        font-family: var(--font-serif);
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--color-espresso);
+      }
+
+      .menu-cta-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 2px;
+      }
+
+      .btn-outline-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 7px 22px;
+        border-radius: 999px;
+        border: 1.4px solid var(--color-terracotta-warm);
+        background-color: transparent;
+        color: var(--color-espresso);
+        font-family: var(--font-sans);
+        font-size: 12.5px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+      }
+
+      .btn-outline-pill:hover {
+        background-color: var(--color-terracotta-warm);
+        color: #ffffff;
+        transform: translateY(-1px);
+      }
+
+      /* =========================================================
+         4. ABOUT US SECTION
+         ========================================================= */
+      .about-section {
+        position: relative;
+        background-color: var(--bg-about);
+        padding: 6px 0 22px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .about-leaf-decor {
+        position: absolute;
+        right: 0;
+        top: -18px;
+        width: 145px;
+        height: auto;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .about-wave-left {
+        position: absolute;
+        left: -30px;
+        bottom: -40px;
+        width: 120px;
+        height: 130px;
+        background-color: var(--bg-wave);
+        border-radius: 50%;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      .about-wave-right {
+        position: absolute;
+        right: -20px;
+        bottom: -40px;
+        width: 190px;
+        height: 120px;
+        background-color: var(--bg-wave);
+        border-radius: 65% 35% 0 0;
+        opacity: 0.75;
+        pointer-events: none;
+      }
+
+      .about-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 46% 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-photo {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        display: block;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+      }
+
+      .about-text-col {
+        padding-right: 40px;
+      }
+
+      .about-kicker-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 4px;
+      }
+
+      .about-heading {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .about-paragraph {
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.58;
+        color: var(--color-body-text);
+        margin-bottom: 16px;
+        max-width: 560px;
+      }
+
+      .btn-know-more {
+        background-color: var(--color-terracotta-warm);
+        padding: 9px 22px;
+      }
+
+      /* =========================================================
+         5. TESTIMONIALS SECTION
+         ========================================================= */
+      .testimonials-section {
+        background-color: var(--bg-testimonials);
+        border-top: 1px solid var(--border-section);
+        border-bottom: 1px solid var(--border-section);
+        padding: 16px 0 14px;
+        width: 100%;
+      }
+
+      .testimonial-stage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        margin-top: 10px;
+      }
+
+      .carousel-arrow-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color: var(--color-terracotta-light);
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 3px 10px rgba(179, 72, 24, 0.22);
+        transition: background-color 0.16s ease, transform 0.16s ease;
+      }
+
+      .carousel-arrow-btn:hover {
+        background-color: var(--color-terracotta);
+        transform: scale(1.05);
+      }
+
+      .testimonial-card {
+        background-color: var(--bg-testimonial-card);
+        border-radius: 16px;
+        padding: 14px 36px;
+        width: 640px;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      }
+
+      .testimonial-avatar-wrap {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .testimonial-avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .testimonial-body {
+        flex: 1;
+      }
+
+      .testimonial-quote {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.44;
+        color: var(--color-espresso);
+        margin-bottom: 8px;
+      }
+
+      .testimonial-meta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .testimonial-author {
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: 13.5px;
+        color: var(--color-body-text);
+      }
+
+      .testimonial-stars {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        color: var(--color-star);
+      }
+
+      .star-svg {
+        color: var(--color-star);
+      }
+
+      .testimonial-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .testimonial-dot {
+        width: 8.5px;
+        height: 8.5px;
+        border-radius: 50%;
+        border: 1.4px solid var(--color-terracotta-light);
+        background-color: transparent;
+        transition: background-color 0.16s ease, transform 0.16s ease;
+      }
+
+      .testimonial-dot.active {
+        background-color: var(--color-terracotta-light);
+      }
+
+      /* =========================================================
+         6. FAQ & GET IN TOUCH SECTION
+         ========================================================= */
+      .faq-touch-section {
+        position: relative;
+        background-color: var(--bg-faq);
+        padding: 16px 0 14px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .faq-container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .faq-burst-decor {
+        position: absolute;
+        left: 12%;
+        top: 4px;
+        width: 34px;
+        height: 34px;
+        color: var(--color-symbol);
+        pointer-events: none;
+      }
+
+      .faq-beans-decor {
+        position: absolute;
+        right: 36px;
+        top: 14px;
+        width: 90px;
+        height: auto;
+        pointer-events: none;
+      }
+
+      .faq-accordion-list {
+        max-width: 720px;
+        margin: 10px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .faq-item {
+        background-color: var(--bg-faq-item);
+        border: 1px solid var(--border-faq);
+        border-radius: 7px;
+        overflow: hidden;
+      }
+
+      .faq-question-btn {
+        width: 100%;
+        padding: 8px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        font-family: var(--font-sans);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-body-text);
+        transition: background-color 0.15s ease, color 0.15s ease;
+      }
+
+      .faq-question-btn:hover {
+        background-color: var(--bg-faq-hover);
+      }
+
+      .faq-chevron {
+        color: var(--color-symbol);
+        transition: transform 0.18s ease, color 0.18s ease;
+        flex-shrink: 0;
+      }
+
+      .faq-question-btn[aria-expanded='true'] .faq-chevron {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer-panel {
+        padding: 0 18px 11px;
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: var(--color-espresso-soft);
+        border-top: 1px solid var(--border-faq);
+        padding-top: 8px;
+      }
+
+      /* Get In Touch Banner */
+      .touch-banner-wrap {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 100%;
+        margin: 14px 0 0;
+        padding: 0 24px;
+      }
+
+      .touch-banner {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #ab4a1b;
+        min-height: 128px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      }
+
+      .touch-banner-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+      }
+
+      .touch-banner-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 12px 24px;
+      }
+
+      .touch-kicker-row {
+        margin-bottom: 2px;
+      }
+
+      .touch-kicker {
+        color: #f8dec8;
+        font-size: 10.5px;
+        font-weight: 600;
+      }
+
+      .touch-kicker-line {
+        background-color: rgba(248, 222, 200, 0.55);
+        width: 56px;
+      }
+
+      .touch-heading {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 23.5px;
+        color: #ffffff;
+        margin-bottom: 11px;
+      }
+
+      .touch-buttons-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .touch-action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: var(--color-tan-btn);
+        color: var(--color-tan-btn-text);
+        min-width: 130px;
+        height: 39px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-family: var(--font-sans);
+        font-size: 12.5px;
+        font-weight: 700;
+        white-space: nowrap;
+        box-shadow: 0 3px 10px rgba(45, 15, 5, 0.14);
+        transition: transform 0.16s ease, background-color 0.16s ease;
+      }
+
+      .touch-action-btn:hover {
+        background-color: #eea165;
+        transform: translateY(-1px);
+      }
+
+      .touch-action-btn-map {
+        padding: 0 20px;
+      }
+
+      .touch-btn-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.08;
+      }
+
+      .touch-btn-main {
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .touch-btn-sub {
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      /* =========================================================
+         7. FOOTER
+         ========================================================= */
+      .site-footer {
+        background-color: var(--color-footer-bg);
+        color: var(--color-footer-text);
+        width: 100%;
+        padding: 14px 44px 12px;
+      }
+
+      .footer-inner {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .footer-top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 10px;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .footer-logo-img {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+      }
+
+      .footer-brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-brand-title {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 18px;
+        color: #ffffff;
+      }
+
+      .footer-brand-sub {
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: #dfbfa6;
+        margin-top: 2px;
+      }
+
+      .footer-center-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+      }
+
+      .footer-location-line {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #f9ebe0;
+      }
+
+      .footer-tagline {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #edd0b9;
+      }
+
+      .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .social-circle-btn {
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        background-color: #f6e7d8;
+        color: var(--color-footer-bg);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.16s ease, background-color 0.16s ease;
+      }
+
+      .social-circle-btn:hover {
+        background-color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      .footer-divider {
+        border: none;
+        border-top: 1px solid rgba(255, 232, 212, 0.22);
+        margin-bottom: 9px;
+      }
+
+      .footer-copyright {
+        text-align: center;
+        font-size: 12px;
+        color: #dfbda2;
+      }
+
+      /* =========================================================
+         8. INTERACTIVE MODALS (MENU: CATEGORY, ITEMS, NAME & PRICE)
+         ========================================================= */
+      .brew-modal {
+        margin: auto;
+        border: 1px solid var(--border-modal);
+        border-radius: 20px;
+        background-color: var(--bg-modal);
+        color: var(--color-espresso);
+        padding: 0;
+        max-width: 560px;
+        width: calc(100% - 32px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+      }
+
+      .brew-modal::backdrop {
+        background-color: rgba(20, 8, 3, 0.62);
+        backdrop-filter: blur(3px);
+      }
+
+      .modal-box {
+        padding: 20px 24px;
+      }
+
+      .modal-box-wide {
+        max-width: 780px;
+      }
+
+      #menu-modal {
+        max-width: 780px;
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-modal);
+      }
+
+      .modal-kicker {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--color-kicker);
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .modal-title {
+        font-family: var(--font-serif);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-espresso);
+      }
+
+      .modal-close-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color: var(--bg-tab);
+        color: var(--color-espresso);
+        font-size: 22px;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.15s ease;
+      }
+
+      .modal-close-btn:hover {
+        background-color: var(--color-terracotta-warm);
+        color: #ffffff;
+      }
+
+      .menu-modal-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 12px 0;
+      }
+
+      .menu-filter-tabs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .menu-tab-btn {
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12.5px;
+        font-weight: 600;
+        background-color: var(--bg-tab);
+        color: var(--text-tab);
+        white-space: nowrap;
+        transition: background-color 0.15s ease, color 0.15s ease;
+      }
+
+      .menu-tab-btn.active {
+        background-color: var(--color-terracotta);
+        color: #ffffff;
+      }
+
+      .menu-items-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        overflow: visible;
+      }
+
+      .menu-items-list.single-category {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-category-block {
+        background-color: var(--bg-modal-card);
+        border: 1px solid var(--border-modal);
+        border-radius: 14px;
+        padding: 12px 16px;
+      }
+
+      .menu-category-block-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 8px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid var(--border-modal);
+      }
+
+      .menu-category-block-title {
+        font-family: var(--font-serif);
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--color-espresso);
+      }
+
+      .menu-simple-items {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .menu-simple-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 5px 0;
+        border-bottom: 1px dashed var(--border-modal);
+      }
+
+      .menu-simple-row:last-child {
+        border-bottom: none;
+        padding-bottom: 2px;
+      }
+
+      .menu-simple-name {
+        font-family: var(--font-serif);
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--color-espresso);
+      }
+
+      .menu-simple-price {
+        font-family: var(--font-sans);
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--color-kicker);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .modal-body-content {
+        padding: 16px 0;
+      }
+
+      .modal-hero-photo {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 14px;
+      }
+
+      .modal-text {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--color-body-text);
+        margin-bottom: 14px;
+      }
+
+      .about-highlights-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .highlight-box {
+        background-color: var(--bg-modal-card);
+        border: 1px solid var(--border-modal);
+        border-radius: 10px;
+        padding: 10px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .highlight-box strong {
+        font-size: 13.5px;
+        color: var(--color-espresso);
+      }
+
+      .highlight-box span {
+        font-size: 12.5px;
+        color: var(--color-espresso-soft);
+      }
+
+      .modal-footer-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid var(--border-modal);
+      }
+
+      .contact-card-box {
+        background-color: var(--bg-modal-card);
+        border: 1px solid var(--border-modal);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 14px;
+      }
+
+      .contact-card-box h4 {
+        font-family: var(--font-serif);
+        font-size: 17px;
+        margin-bottom: 6px;
+        color: var(--color-espresso);
+      }
+
+      .contact-card-box p {
+        font-size: 13.5px;
+        color: var(--color-espresso-soft);
+        line-height: 1.5;
+      }
+
+      .contact-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .contact-form-group label {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--color-body-text);
+      }
+
+      .contact-form-input {
+        padding: 9px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border-modal);
+        background-color: var(--bg-modal-card);
+        color: var(--color-espresso);
+        font-size: 13.5px;
+      }
+
+      .brew-toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 100;
+        background-color: var(--color-espresso);
+        color: var(--bg-header);
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 13.5px;
+        font-weight: 600;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      }
+
+      /* =========================================================
+         9. RESPONSIVE BREAKPOINTS
+         ========================================================= */
+      @media (max-width: 900px) {
+        .header-inner {
+          padding: 10px 20px;
+        }
+
+        .primary-nav,
+        .header-divider {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: inline-flex;
+        }
+
+        .hero-content-wrap {
+          position: relative;
+          padding: 28px 24px 12px;
+        }
+
+        .welcome-burst {
+          position: static;
+          width: 26px;
+          height: 26px;
+        }
+
+        .hero-title {
+          font-size: 36px;
+        }
+
+        .menu-categories-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .section-container {
+          padding: 0 24px;
+        }
+
+        .testimonial-stage {
+          gap: 12px;
+        }
+
+        .testimonial-card {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .testimonial-meta {
+          justify-content: center;
+        }
+
+        .faq-burst-decor,
+        .faq-beans-decor,
+        .about-leaf-decor {
+          display: none;
+        }
+
+        .footer-top-row {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .menu-items-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Header Navigation -->
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a href="#home" class="brand-logo" aria-label="The Brew House Home">
+          <img
+            src="assets/logo-cup-trans.png"
+            alt="The Brew House Coffee Cup Emblem"
+            class="brand-logo-img"
+            id="header-logo-img"
+            referrerpolicy="no-referrer"
+          />
+          <div class="brand-text">
+            <span class="brand-title">The<br />Brew House</span>
+            <span class="brand-subtitle">CAFÉ &bull; BITES &bull; GOOD VIBES</span>
+          </div>
+        </a>
+
+        <nav class="primary-nav" aria-label="Main Navigation">
+          <a href="#home" class="nav-link active" data-nav="home">Home</a>
+          <a href="#menu" class="nav-link" data-nav="menu">Menu</a>
+          <a href="#about" class="nav-link" data-nav="about">About</a>
+          <a href="#faq" class="nav-link" data-nav="faq">FAQ</a>
+          <a href="#testimonial" class="nav-link" data-nav="testimonial">Testimonial</a>
+          <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+        </nav>
+
+        <div class="header-right">
+          <span class="header-divider" aria-hidden="true"></span>
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            id="theme-toggle-btn"
+            aria-label="Switch to dark theme"
+            title="Toggle Dark / Light Theme"
+          >
+            <!-- Moon Icon (shown in light mode) -->
+            <svg
+              class="theme-icon theme-icon-moon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg
+              class="theme-icon theme-icon-sun"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <span class="theme-toggle-label" id="theme-toggle-label">Dark</span>
+          </button>
+
+          <button
+            type="button"
+            class="mobile-menu-btn"
+            id="mobile-menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Nav -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" hidden>
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#menu" class="mobile-nav-link">Menu</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <a href="#testimonial" class="mobile-nav-link">Testimonial</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section" id="home">
+        <div class="hero-backdrop">
+          <img
+            src="assets/hero-clean.png"
+            alt="Artisanal latte art coffee cup on a wooden board at The Brew House"
+            class="hero-bg-img"
+            referrerpolicy="no-referrer"
+          />
+          <div class="hero-dark-scrim" aria-hidden="true"></div>
+        </div>
+        <div class="hero-content-wrap">
+          <div class="hero-text-box">
+            <div class="hero-welcome-row">
+              <!-- 3-ray burst icon on top-left of Welcome to -->
+              <svg
+                class="welcome-burst"
+                width="34"
+                height="34"
+                viewBox="0 0 40 40"
+                fill="none"
+                aria-hidden="true"
+              >
+                <line x1="28" y1="14" x2="13" y2="5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <line x1="25" y1="22" x2="7" y2="18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <line x1="26" y1="29" x2="9" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+              </svg>
+              <span class="welcome-italic">Welcome to</span>
+              <span class="welcome-line" aria-hidden="true"></span>
+            </div>
+
+            <h1 class="hero-title">The Brew House</h1>
+
+            <p class="hero-subtitle">
+              A cozy café in Ghaziabad, where great food<br />
+              meets good vibes.
+            </p>
+
+            <button type="button" class="btn-primary-pill" id="hero-explore-btn">
+              <span>Explore Our Menu</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Menu Section -->
+      <section class="menu-section" id="menu">
+        <div class="section-container">
+          <div class="section-kicker-row">
+            <span class="kicker-line" aria-hidden="true"></span>
+            <span class="section-kicker">OUR MENU</span>
+            <span class="kicker-line" aria-hidden="true"></span>
+          </div>
+
+          <h2 class="section-heading">Delicious Bites, Crafted with Love</h2>
+
+          <div class="menu-categories-grid">
+            <button
+              type="button"
+              class="menu-category-card"
+              data-category="Pizzas"
+              aria-label="Explore Pizzas menu"
+            >
+              <div class="menu-plate-wrap">
+                <img
+                  src="assets/menu-pizza.png"
+                  alt="Wood-fired Pizzas"
+                  class="menu-plate-img"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <span class="menu-category-name">Pizzas</span>
+            </button>
+
+            <button
+              type="button"
+              class="menu-category-card"
+              data-category="Pastas"
+              aria-label="Explore Pastas menu"
+            >
+              <div class="menu-plate-wrap">
+                <img
+                  src="assets/menu-pasta.png"
+                  alt="Artisanal Pastas"
+                  class="menu-plate-img"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <span class="menu-category-name">Pastas</span>
+            </button>
+
+            <button
+              type="button"
+              class="menu-category-card"
+              data-category="Snacks"
+              aria-label="Explore Snacks menu"
+            >
+              <div class="menu-plate-wrap">
+                <img
+                  src="assets/menu-snacks.png"
+                  alt="Crispy Café Snacks"
+                  class="menu-plate-img"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <span class="menu-category-name">Snacks</span>
+            </button>
+
+            <button
+              type="button"
+              class="menu-category-card"
+              data-category="Beverages"
+              aria-label="Explore Beverages menu"
+            >
+              <div class="menu-plate-wrap menu-plate-wrap-beverage">
+                <img
+                  src="assets/menu-beverages.png"
+                  alt="Signature Cold Coffee and Beverages"
+                  class="menu-plate-img menu-plate-img-beverage"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <span class="menu-category-name">Beverages</span>
+            </button>
+          </div>
+
+          <div class="menu-cta-wrap">
+            <button type="button" class="btn-outline-pill" id="view-full-menu-btn">
+              <span>View Full Menu</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section class="about-section" id="about">
+        <!-- Subtle corner wave accents and botanical leaf -->
+        <div class="about-wave-left" aria-hidden="true"></div>
+        <div class="about-wave-right" aria-hidden="true"></div>
+        <img
+          src="assets/leaf-right.png"
+          alt=""
+          class="about-leaf-decor"
+          aria-hidden="true"
+          referrerpolicy="no-referrer"
+        />
+
+        <div class="section-container about-grid">
+          <div class="about-image-col">
+            <img
+              src="assets/about-cafe.png"
+              alt="The Brew House interior with hanging plants, warm lights, and Good Food Good Mood wall art"
+              class="about-photo"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+
+          <div class="about-text-col">
+            <div class="about-kicker-row">
+              <span class="section-kicker">ABOUT US</span>
+              <span class="kicker-line" aria-hidden="true"></span>
+            </div>
+
+            <h2 class="section-heading about-heading">More Than Just a Café</h2>
+
+            <p class="about-paragraph">
+              At <span class="underline-word">The Brew House</span>, we believe in the simple joys of life &mdash;
+              great food, warm ambience and even better company. Whether you’re here for a quick bite, a relaxed coffee
+              or a fun hangout, you’ll always find a home here.
+            </p>
+
+            <button type="button" class="btn-primary-pill btn-know-more" id="know-more-btn">
+              <span>Know More</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials-section" id="testimonial">
+        <div class="section-container">
+          <div class="section-kicker-row">
+            <span class="kicker-line" aria-hidden="true"></span>
+            <span class="section-kicker">TESTIMONIALS</span>
+            <span class="kicker-line" aria-hidden="true"></span>
+          </div>
+
+          <h2 class="section-heading">What Our Customers Say</h2>
+
+          <div class="testimonial-stage">
+            <button
+              type="button"
+              class="carousel-arrow-btn"
+              id="testimonial-prev-btn"
+              aria-label="Previous customer review"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <article class="testimonial-card" id="testimonial-card" aria-live="polite">
+              <div class="testimonial-avatar-wrap">
+                <img
+                  src="assets/testimonial-priya.png"
+                  alt="Priya Sharma enjoying coffee at The Brew House"
+                  class="testimonial-avatar"
+                  id="testimonial-avatar"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <div class="testimonial-body">
+                <blockquote class="testimonial-quote" id="testimonial-quote">
+                  &ldquo;The food is absolutely delicious and the ambience<br />
+                  is so cozy. A must-visit in Ghaziabad!&rdquo;
+                </blockquote>
+                <div class="testimonial-meta">
+                  <span class="testimonial-author" id="testimonial-author">&mdash; Priya Sharma</span>
+                  <div class="testimonial-stars" id="testimonial-stars" aria-label="5 out of 5 stars">
+                    <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                    <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                    <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                    <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                    <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <button
+              type="button"
+              class="carousel-arrow-btn"
+              id="testimonial-next-btn"
+              aria-label="Next customer review"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="testimonial-dots" role="tablist" aria-label="Testimonial slides">
+            <button
+              type="button"
+              class="testimonial-dot active"
+              data-slide="0"
+              aria-label="Review 1: Priya Sharma"
+              aria-selected="true"
+            ></button>
+            <button
+              type="button"
+              class="testimonial-dot"
+              data-slide="1"
+              aria-label="Review 2: Rohan Malhotra"
+              aria-selected="false"
+            ></button>
+            <button
+              type="button"
+              class="testimonial-dot"
+              data-slide="2"
+              aria-label="Review 3: Ananya Verma"
+              aria-selected="false"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ & Get In Touch Section -->
+      <section class="faq-touch-section" id="faq">
+        <div class="faq-wave-left" aria-hidden="true"></div>
+        <div class="faq-wave-right" aria-hidden="true"></div>
+
+        <div class="section-container faq-container">
+          <!-- Decorative burst on left of FAQ heading -->
+          <svg
+            class="faq-burst-decor"
+            width="38"
+            height="38"
+            viewBox="0 0 40 40"
+            fill="none"
+            aria-hidden="true"
+          >
+            <line x1="33" y1="24" x2="29" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="26" y1="28" x2="14" y2="13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="21" y1="34" x2="6" y2="27" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+
+          <!-- Decorative roasted coffee beans on right -->
+          <img
+            src="assets/coffee-beans.png"
+            alt=""
+            class="faq-beans-decor"
+            aria-hidden="true"
+            referrerpolicy="no-referrer"
+          />
+
+          <div class="section-kicker-row">
+            <span class="kicker-line" aria-hidden="true"></span>
+            <span class="section-kicker">FAQ</span>
+            <span class="kicker-line" aria-hidden="true"></span>
+          </div>
+
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+
+          <div class="faq-accordion-list" id="faq-accordion-list">
+            <!-- Item 1 -->
+            <div class="faq-item" data-faq-id="faq-1">
+              <button
+                type="button"
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-panel-1"
+                id="faq-btn-1"
+              >
+                <span class="faq-question-text">Do you offer home delivery?</span>
+                <svg
+                  class="faq-chevron"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-answer-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>
+                <p>
+                  Yes! We offer fast, temperature-sealed home delivery across Ghaziabad (including Indirapuram,
+                  Vaishali, Vasundhara, Raj Nagar, and Kavi Nagar). You can order directly via WhatsApp or call us for
+                  complimentary delivery on orders above ₹499.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-item" data-faq-id="faq-2">
+              <button
+                type="button"
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-panel-2"
+                id="faq-btn-2"
+              >
+                <span class="faq-question-text">Is there parking available?</span>
+                <svg
+                  class="faq-chevron"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-answer-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
+                <p>
+                  Yes, we have spacious, complimentary car and two-wheeler parking right in front of the café with
+                  dedicated security assistance throughout our opening hours.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-item" data-faq-id="faq-3">
+              <button
+                type="button"
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-panel-3"
+                id="faq-btn-3"
+              >
+                <span class="faq-question-text">
+                  What are <span class="underline-word">your</span> opening hours?
+                </span>
+                <svg
+                  class="faq-chevron"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq-answer-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
+                <p>
+                  We are open every day from 10:00 AM to 11:00 PM (Monday through Sunday), including public holidays.
+                  Join us for morning coffee, lunch bites, or cozy evening hangouts!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Get In Touch Banner -->
+        <div class="touch-banner-wrap" id="contact">
+          <div class="touch-banner">
+            <img
+              src="assets/touch-banner-clean.png"
+              alt=""
+              class="touch-banner-bg"
+              aria-hidden="true"
+              referrerpolicy="no-referrer"
+            />
+
+            <div class="touch-banner-content">
+              <div class="section-kicker-row touch-kicker-row">
+                <span class="kicker-line touch-kicker-line" aria-hidden="true"></span>
+                <span class="section-kicker touch-kicker">GET IN TOUCH</span>
+                <span class="kicker-line touch-kicker-line" aria-hidden="true"></span>
+              </div>
+
+              <h2 class="touch-heading">We’d love to hear from you!</h2>
+
+              <div class="touch-buttons-row">
+                <button type="button" class="touch-action-btn" id="btn-call-us">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"
+                    />
+                  </svg>
+                  <span class="touch-btn-label">Call Us</span>
+                </button>
+
+                <button type="button" class="touch-action-btn" id="btn-whatsapp-us">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.5 9.5c.3 1.5 1.7 2.9 3.2 3.2l1.1-.8c.2-.2.5-.2.8-.1l1.6.7c.3.1.4.5.3.8-.3.9-1.2 1.5-2.1 1.4-3-.2-5.7-2.9-5.9-5.9-.1-.9.5-1.8 1.4-2.1.3-.1.7 0 .8.3l.7 1.6c.1.3.1.6-.1.8l-.8 1.1z"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                  <span class="touch-btn-label">WhatsApp Us</span>
+                </button>
+
+                <button type="button" class="touch-action-btn touch-action-btn-map" id="btn-find-us">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"
+                    />
+                  </svg>
+                  <span class="touch-btn-stack">
+                    <strong class="touch-btn-main">Find Us</strong>
+                    <small class="touch-btn-sub">(Google Map)</small>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top-row">
+          <a href="#home" class="footer-brand" aria-label="The Brew House Home">
+            <img
+              src="assets/footer-cup.png"
+              alt="The Brew House Footer Emblem"
+              class="footer-logo-img"
+              referrerpolicy="no-referrer"
+            />
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">The Brew House</span>
+              <span class="footer-brand-sub">CAFÉ &bull; BITES &bull; GOOD VIBES</span>
+            </div>
+          </a>
+
+          <div class="footer-center-info">
+            <div class="footer-location-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"
+                />
+              </svg>
+              <span>Ghaziabad, Uttar Pradesh</span>
+            </div>
+            <div class="footer-tagline">Good Food &bull; Good Mood</div>
+          </div>
+
+          <div class="footer-socials" aria-label="Social Media Links">
+            <button
+              type="button"
+              class="social-circle-btn"
+              data-social="Instagram"
+              aria-label="Follow The Brew House on Instagram"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="social-circle-btn"
+              data-social="Facebook"
+              aria-label="Follow The Brew House on Facebook"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3V3z"></path>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="social-circle-btn"
+              data-social="YouTube"
+              aria-label="Subscribe to The Brew House on YouTube"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <p class="footer-copyright">&copy; 2025 The Brew House. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Simplified Menu Modal: Shows ONLY Category, Items, Item Name, and Prices -->
+    <dialog class="brew-modal" id="menu-modal" aria-labelledby="menu-modal-title">
+      <div class="modal-box modal-box-wide">
+        <div class="modal-header">
+          <div>
+            <span class="modal-kicker">OUR MENU</span>
+            <h3 class="modal-title" id="menu-modal-title">Full Menu</h3>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="menu-modal" aria-label="Close menu dialog">
+            &times;
+          </button>
+        </div>
+
+        <div class="menu-modal-controls">
+          <div class="menu-filter-tabs" role="tablist" aria-label="Select menu category">
+            <button type="button" class="menu-tab-btn active" data-filter-cat="All">All Categories</button>
+            <button type="button" class="menu-tab-btn" data-filter-cat="Pizzas">Pizzas</button>
+            <button type="button" class="menu-tab-btn" data-filter-cat="Pastas">Pastas</button>
+            <button type="button" class="menu-tab-btn" data-filter-cat="Snacks">Snacks</button>
+            <button type="button" class="menu-tab-btn" data-filter-cat="Beverages">Beverages</button>
+          </div>
+        </div>
+
+        <div class="menu-items-list" id="menu-modal-items"></div>
+      </div>
+    </dialog>
+
+    <!-- Interactive About / Know More Modal -->
+    <dialog class="brew-modal" id="about-modal" aria-labelledby="about-modal-title">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div>
+            <span class="modal-kicker">OUR STORY &bull; GHAZIABAD</span>
+            <h3 class="modal-title" id="about-modal-title">More Than Just a Café</h3>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="about-modal" aria-label="Close story dialog">
+            &times;
+          </button>
+        </div>
+
+        <div class="modal-body-content">
+          <img
+            src="assets/about-cafe.png"
+            alt="Inside The Brew House Ghaziabad"
+            class="modal-hero-photo"
+            referrerpolicy="no-referrer"
+          />
+          <p class="modal-text">
+            Founded in the heart of Ghaziabad, <strong>The Brew House</strong> was designed as a warm neighborhood
+            sanctuary where freshly roasted 100% Arabica beans meet hand-stretched wood-fired pizzas and slow-simmered
+            Italian pastas.
+          </p>
+          <div class="about-highlights-grid">
+            <div class="highlight-box">
+              <strong>Single-Origin Estates</strong>
+              <span>Freshly ground Chikmagalur &amp; Coorg beans roasted weekly.</span>
+            </div>
+            <div class="highlight-box">
+              <strong>Cozy Work &amp; Hangout Zones</strong>
+              <span>High-speed Wi-Fi, plug points at every table, and acoustic music nights.</span>
+            </div>
+            <div class="highlight-box">
+              <strong>100% Fresh Kitchen</strong>
+              <span>Hand-rolled pizza dough, house-made sauces, and zero preservatives.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer-actions">
+          <button type="button" class="btn-outline-pill" data-close-modal="about-modal">Close</button>
+          <button type="button" class="btn-primary-pill" id="about-open-menu-btn">Explore Full Menu</button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Interactive Contact / Map / WhatsApp Modal -->
+    <dialog class="brew-modal" id="contact-modal" aria-labelledby="contact-modal-title">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div>
+            <span class="modal-kicker" id="contact-modal-kicker">GET IN TOUCH</span>
+            <h3 class="modal-title" id="contact-modal-title">Connect with The Brew House</h3>
+          </div>
+          <button
+            type="button"
+            class="modal-close-btn"
+            data-close-modal="contact-modal"
+            aria-label="Close contact dialog"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="modal-body-content" id="contact-modal-body"></div>
+      </div>
+    </dialog>
+
+    <!-- Toast Notification -->
+    <div class="brew-toast" id="brew-toast" role="status" aria-live="polite" hidden></div>
+
+    <!-- Self-Contained Vanilla JavaScript -->
+    <script>
+      (function () {
+        const MENU_CATEGORIES = [
+          { category: 'Pizzas', image: 'assets/menu-pizza.png' },
+          { category: 'Pastas', image: 'assets/menu-pasta.png' },
+          { category: 'Snacks', image: 'assets/menu-snacks.png' },
+          { category: 'Beverages', image: 'assets/menu-beverages.png' },
+        ];
+
+        const MENU_ITEMS = [
+          // Pizzas
+          { id: 'piz-1', name: 'Classic Margherita Wood-Fired Pizza', category: 'Pizzas', price: 289 },
+          { id: 'piz-2', name: 'Smoky Paneer Tikka & Bell Pepper Pizza', category: 'Pizzas', price: 349 },
+          { id: 'piz-3', name: 'Farmhouse Four-Season Veggie Pizza', category: 'Pizzas', price: 329 },
+          { id: 'piz-4', name: 'Pesto Burrata & Sun-Dried Tomato Pizza', category: 'Pizzas', price: 389 },
+
+          // Pastas
+          { id: 'pas-1', name: 'Spaghetti Arrabbiata al Pomodoro', category: 'Pastas', price: 269 },
+          { id: 'pas-2', name: 'Penne Rosa Pink Sauce Pasta', category: 'Pastas', price: 299 },
+          { id: 'pas-3', name: 'Truffle Mushroom Fettuccine Alfredo', category: 'Pastas', price: 339 },
+          { id: 'pas-4', name: 'Classic Basil Pesto Penne', category: 'Pastas', price: 309 },
+
+          // Snacks
+          { id: 'snk-1', name: 'Peri-Peri Crispy Belgian Fries', category: 'Snacks', price: 179 },
+          { id: 'snk-2', name: 'Cheesy Garlic Pull-Apart Bread', category: 'Snacks', price: 219 },
+          { id: 'snk-3', name: 'Loaded Nachos Grande', category: 'Snacks', price: 249 },
+          { id: 'snk-4', name: 'Grilled Bruschetta & Avocado Toast', category: 'Snacks', price: 239 },
+
+          // Beverages
+          { id: 'bev-1', name: 'Signature Hazelnut Frappe', category: 'Beverages', price: 229 },
+          { id: 'bev-2', name: 'Artisanal Caramel Latte', category: 'Beverages', price: 189 },
+          { id: 'bev-3', name: 'Belgian Dark Chocolate Mocha Shake', category: 'Beverages', price: 249 },
+          { id: 'bev-4', name: 'Peach & Hibiscus Iced Brew Tea', category: 'Beverages', price: 169 },
+        ];
+
+        const TESTIMONIALS = [
+          {
+            id: 'test-1',
+            name: 'Priya Sharma',
+            role: 'Regular Guest, Indirapuram',
+            quote: '“The food is absolutely delicious and the ambience is so cozy. A must-visit in Ghaziabad!”',
+            rating: 5,
+            avatar: 'assets/testimonial-priya.png',
+          },
+          {
+            id: 'test-2',
+            name: 'Rohan Malhotra',
+            role: 'Coffee Enthusiast, Raj Nagar',
+            quote:
+              '“Best hazelnut frappe and wood-fired pizzas in town! The hanging plants and warm lighting make it our favourite weekend spot.”',
+            rating: 5,
+            avatar: 'assets/testimonial-priya.png',
+          },
+          {
+            id: 'test-3',
+            name: 'Ananya Verma',
+            role: 'Food Blogger, Vaishali',
+            quote:
+              '“From the creamy Arrabbiata pasta to the friendly staff, every detail at The Brew House lives up to Good Food, Good Mood!”',
+            rating: 5,
+            avatar: 'assets/testimonial-priya.png',
+          },
+        ];
+
+        function groupMenuByCategory(items, selectedCategory) {
+          const normalized = (selectedCategory || 'All').trim();
+          const targetCategories =
+            !normalized || normalized === 'All'
+              ? MENU_CATEGORIES
+              : MENU_CATEGORIES.filter(function (c) {
+                  return c.category.toLowerCase() === normalized.toLowerCase();
+                });
+
+          return targetCategories
+            .map(function (catObj) {
+              return {
+                category: catObj.category,
+                image: catObj.image,
+                items: items.filter(function (item) {
+                  return item.category === catObj.category;
+                }),
+              };
+            })
+            .filter(function (group) {
+              return group.items.length > 0;
+            });
+        }
+
+        function getNextTheme(current) {
+          return current === 'dark' ? 'light' : 'dark';
+        }
+
+        function getNextTestimonialIndex(currentIndex, total, direction) {
+          if (total <= 0) return 0;
+          if (direction === 'next') {
+            return (currentIndex + 1) % total;
+          }
+          return (currentIndex - 1 + total) % total;
+        }
+
+        // Application State
+        let activeCategory = 'All';
+        let currentTheme = 'light';
+        let currentTestimonialIndex = 0;
+        const openFaqs = new Set();
+        let toastTimer;
+
+        function showToast(message) {
+          const toastEl = document.getElementById('brew-toast');
+          if (!toastEl) return;
+          toastEl.textContent = message;
+          toastEl.hidden = false;
+          if (toastTimer) {
+            window.clearTimeout(toastTimer);
+          }
+          toastTimer = window.setTimeout(function () {
+            toastEl.hidden = true;
+          }, 3400);
+        }
+
+        function applyTheme(theme) {
+          currentTheme = theme;
+          const root = document.documentElement;
+          if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            root.classList.add('dark');
+          } else {
+            root.setAttribute('data-theme', 'light');
+            root.classList.remove('dark');
+          }
+
+          const labelEl = document.getElementById('theme-toggle-label');
+          const toggleBtn = document.getElementById('theme-toggle-btn');
+          if (labelEl) {
+            labelEl.textContent = theme === 'dark' ? 'Light' : 'Dark';
+          }
+          if (toggleBtn) {
+            toggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+          }
+
+          try {
+            window.localStorage.setItem('brewhouse_theme', theme);
+          } catch (err) {
+            // ignore storage errors
+          }
+        }
+
+        function openDialog(id) {
+          const dialog = document.getElementById(id);
+          if (!dialog) return;
+          if (typeof dialog.showModal === 'function') {
+            if (!dialog.open) dialog.showModal();
+          } else {
+            dialog.setAttribute('open', 'true');
+          }
+        }
+
+        function closeDialog(id) {
+          const dialog = document.getElementById(id);
+          if (!dialog) return;
+          if (typeof dialog.close === 'function' && dialog.open) {
+            dialog.close();
+          } else {
+            dialog.removeAttribute('open');
+          }
+        }
+
+        // Render Menu Items inside Menu Modal: ONLY Category, Items, Item Name, and Prices
+        function renderMenuModal() {
+          const listEl = document.getElementById('menu-modal-items');
+          const titleEl = document.getElementById('menu-modal-title');
+          if (!listEl) return;
+
+          if (titleEl) {
+            titleEl.textContent = activeCategory === 'All' ? 'Full Menu' : activeCategory;
+          }
+
+          const tabBtns = document.querySelectorAll('.menu-tab-btn');
+          tabBtns.forEach(function (btn) {
+            const cat = btn.getAttribute('data-filter-cat') || 'All';
+            btn.classList.toggle('active', cat === activeCategory);
+          });
+
+          const groups = groupMenuByCategory(MENU_ITEMS, activeCategory);
+          listEl.classList.toggle('single-category', groups.length === 1);
+
+          listEl.innerHTML = groups
+            .map(function (group) {
+              return (
+                '<section class="menu-category-block" aria-label="' +
+                group.category +
+                '">' +
+                '<div class="menu-category-block-header">' +
+                '<h4 class="menu-category-block-title">' +
+                group.category +
+                '</h4>' +
+                '</div>' +
+                '<div class="menu-simple-items">' +
+                group.items
+                  .map(function (item) {
+                    return (
+                      '<div class="menu-simple-row" data-item-id="' +
+                      item.id +
+                      '">' +
+                      '<span class="menu-simple-name">' +
+                      item.name +
+                      '</span>' +
+                      '<span class="menu-simple-price">₹' +
+                      item.price +
+                      '</span>' +
+                      '</div>'
+                    );
+                  })
+                  .join('') +
+                '</div>' +
+                '</section>'
+              );
+            })
+            .join('');
+        }
+
+        function renderTestimonial() {
+          const item = TESTIMONIALS[currentTestimonialIndex];
+          if (!item) return;
+
+          const quoteEl = document.getElementById('testimonial-quote');
+          const authorEl = document.getElementById('testimonial-author');
+          const avatarEl = document.getElementById('testimonial-avatar');
+          const dots = document.querySelectorAll('.testimonial-dot');
+
+          if (quoteEl) {
+            if (currentTestimonialIndex === 0) {
+              quoteEl.innerHTML =
+                '&ldquo;The food is absolutely delicious and the ambience<br />is so cozy. A must-visit in Ghaziabad!&rdquo;';
+            } else {
+              quoteEl.textContent = item.quote;
+            }
+          }
+          if (authorEl) {
+            authorEl.textContent = '— ' + item.name;
+          }
+          if (avatarEl) {
+            avatarEl.src = item.avatar;
+            avatarEl.alt = item.name + ' reviewing The Brew House';
+          }
+
+          dots.forEach(function (dot, idx) {
+            const isActive = idx === currentTestimonialIndex;
+            dot.classList.toggle('active', isActive);
+            dot.setAttribute('aria-selected', String(isActive));
+          });
+        }
+
+        function openContactModal(mode) {
+          const kickerEl = document.getElementById('contact-modal-kicker');
+          const titleEl = document.getElementById('contact-modal-title');
+          const bodyEl = document.getElementById('contact-modal-body');
+          if (!kickerEl || !titleEl || !bodyEl) return;
+
+          if (mode === 'call') {
+            kickerEl.textContent = 'CALL US DIRECTLY';
+            titleEl.textContent = 'Speak with Our Café Host';
+            bodyEl.innerHTML =
+              '<div class="contact-card-box">' +
+              '<h4>The Brew House — Ghaziabad Desk</h4>' +
+              '<p><strong>Phone:</strong> +91 98112 45678 / 0120-4567890</p>' +
+              '<p><strong>Hours:</strong> 10:00 AM – 11:00 PM (Monday – Sunday)</p>' +
+              '</div>' +
+              '<form id="callback-form">' +
+              '<div class="contact-form-group">' +
+              '<label for="cb-name">Your Name</label>' +
+              '<input id="cb-name" type="text" class="contact-form-input" placeholder="e.g. Priya Sharma" required />' +
+              '</div>' +
+              '<div class="contact-form-group">' +
+              '<label for="cb-phone">Phone Number for Instant Callback</label>' +
+              '<input id="cb-phone" type="tel" class="contact-form-input" placeholder="+91 98XXX XXXXX" required />' +
+              '</div>' +
+              '<div class="modal-footer-actions">' +
+              '<button type="button" class="btn-outline-pill" id="copy-phone-btn">Copy Phone Number</button>' +
+              '<button type="submit" class="btn-primary-pill">Request Callback</button>' +
+              '</div>' +
+              '</form>';
+
+            const copyBtn = document.getElementById('copy-phone-btn');
+            if (copyBtn) {
+              copyBtn.addEventListener('click', function () {
+                if (navigator.clipboard) {
+                  navigator.clipboard.writeText('+91 98112 45678').catch(function () {});
+                }
+                showToast('Phone number +91 98112 45678 copied to clipboard!');
+              });
+            }
+
+            const form = document.getElementById('callback-form');
+            if (form) {
+              form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                closeDialog('contact-modal');
+                showToast('Callback requested! Our café host will call you shortly.');
+              });
+            }
+          } else if (mode === 'whatsapp') {
+            kickerEl.textContent = 'WHATSAPP CONCIERGE';
+            titleEl.textContent = 'Message Us on WhatsApp';
+            const defaultMsg = "Hi The Brew House! I'd like to reserve a table / inquire about today's specials.";
+
+            bodyEl.innerHTML =
+              '<div class="contact-card-box">' +
+              '<h4>WhatsApp Ordering & Table Booking</h4>' +
+              '<p>Fast responses within 2 minutes during café hours (+91 98112 45678).</p>' +
+              '</div>' +
+              '<form id="whatsapp-form">' +
+              '<div class="contact-form-group">' +
+              '<label for="wa-guest-name">Your Name</label>' +
+              '<input id="wa-guest-name" type="text" class="contact-form-input" placeholder="Your full name" required />' +
+              '</div>' +
+              '<div class="contact-form-group">' +
+              '<label for="wa-message">Your Message</label>' +
+              '<textarea id="wa-message" rows="3" class="contact-form-input" required>' +
+              defaultMsg +
+              '</textarea>' +
+              '</div>' +
+              '<div class="modal-footer-actions">' +
+              '<button type="button" class="btn-outline-pill" data-close-modal="contact-modal">Cancel</button>' +
+              '<button type="submit" class="btn-primary-pill">Send WhatsApp Inquiry</button>' +
+              '</div>' +
+              '</form>';
+
+            const form = document.getElementById('whatsapp-form');
+            if (form) {
+              form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                closeDialog('contact-modal');
+                showToast('WhatsApp message sent to The Brew House (+91 98112 45678)!');
+              });
+            }
+          } else {
+            kickerEl.textContent = 'FIND US IN GHAZIABAD';
+            titleEl.textContent = 'The Brew House Location & Map';
+            bodyEl.innerHTML =
+              '<div class="contact-card-box">' +
+              '<h4>C-14, Habitat Centre Promenade, Indirapuram, Ghaziabad, UP 201014</h4>' +
+              '<p><strong>Landmark:</strong> Opposite Swarn Jayanti Park Main Gate · 5 mins from Vaishali Metro Station</p>' +
+              '<p><strong>Parking:</strong> Complimentary dedicated car & two-wheeler parking available.</p>' +
+              '</div>' +
+              '<div class="contact-card-box">' +
+              '<h4>Interactive Directions Summary</h4>' +
+              '<p>Coordinates: 28.6415° N, 77.3714° E · Open Today: 10:00 AM – 11:00 PM</p>' +
+              '</div>' +
+              '<div class="modal-footer-actions">' +
+              '<button type="button" class="btn-outline-pill" id="copy-address-btn">Copy Café Address</button>' +
+              '<button type="button" class="btn-primary-pill" id="reserve-table-map-btn">Reserve a Table Here</button>' +
+              '</div>';
+
+            const copyAddrBtn = document.getElementById('copy-address-btn');
+            if (copyAddrBtn) {
+              copyAddrBtn.addEventListener('click', function () {
+                if (navigator.clipboard) {
+                  navigator.clipboard
+                    .writeText(
+                      'The Brew House, C-14, Habitat Centre Promenade, Indirapuram, Ghaziabad, Uttar Pradesh 201014'
+                    )
+                    .catch(function () {});
+                }
+                showToast('Ghaziabad café address copied to clipboard!');
+              });
+            }
+
+            const reserveBtn = document.getElementById('reserve-table-map-btn');
+            if (reserveBtn) {
+              reserveBtn.addEventListener('click', function () {
+                openContactModal('whatsapp');
+              });
+            }
+          }
+
+          openDialog('contact-modal');
+        }
+
+        function initBrewHouseApp() {
+          try {
+            const saved = window.localStorage.getItem('brewhouse_theme');
+            if (saved === 'dark' || saved === 'light') {
+              applyTheme(saved);
+            } else {
+              applyTheme('light');
+            }
+          } catch (err) {
+            applyTheme('light');
+          }
+
+          const themeBtn = document.getElementById('theme-toggle-btn');
+          if (themeBtn) {
+            themeBtn.addEventListener('click', function () {
+              applyTheme(getNextTheme(currentTheme));
+            });
+          }
+
+          const header = document.querySelector('.site-header');
+          const navLinks = document.querySelectorAll('.nav-link');
+
+          window.addEventListener(
+            'scroll',
+            function () {
+              if (header) {
+                header.classList.toggle('scrolled', window.scrollY > 12);
+              }
+            },
+            { passive: true }
+          );
+
+          navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+              navLinks.forEach(function (l) {
+                l.classList.remove('active');
+              });
+              link.classList.add('active');
+            });
+          });
+
+          const mobileToggle = document.getElementById('mobile-menu-toggle');
+          const mobileDrawer = document.getElementById('mobile-nav-drawer');
+          if (mobileToggle) {
+            mobileToggle.addEventListener('click', function () {
+              if (!mobileDrawer) return;
+              const isHidden = mobileDrawer.hasAttribute('hidden');
+              if (isHidden) {
+                mobileDrawer.removeAttribute('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'true');
+              } else {
+                mobileDrawer.setAttribute('hidden', '');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+              }
+            });
+          }
+
+          document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+              if (mobileDrawer) mobileDrawer.setAttribute('hidden', '');
+              if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+            });
+          });
+
+          const heroExploreBtn = document.getElementById('hero-explore-btn');
+          if (heroExploreBtn) {
+            heroExploreBtn.addEventListener('click', function () {
+              const menuSec = document.getElementById('menu');
+              if (menuSec) menuSec.scrollIntoView({ behavior: 'smooth' });
+              activeCategory = 'All';
+              renderMenuModal();
+              openDialog('menu-modal');
+            });
+          }
+
+          const viewFullMenuBtn = document.getElementById('view-full-menu-btn');
+          if (viewFullMenuBtn) {
+            viewFullMenuBtn.addEventListener('click', function () {
+              activeCategory = 'All';
+              renderMenuModal();
+              openDialog('menu-modal');
+            });
+          }
+
+          document.querySelectorAll('.menu-category-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+              activeCategory = card.getAttribute('data-category') || 'All';
+              renderMenuModal();
+              openDialog('menu-modal');
+            });
+          });
+
+          document.querySelectorAll('.menu-tab-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              activeCategory = btn.getAttribute('data-filter-cat') || 'All';
+              renderMenuModal();
+            });
+          });
+
+          const knowMoreBtn = document.getElementById('know-more-btn');
+          if (knowMoreBtn) {
+            knowMoreBtn.addEventListener('click', function () {
+              openDialog('about-modal');
+            });
+          }
+
+          const aboutOpenMenuBtn = document.getElementById('about-open-menu-btn');
+          if (aboutOpenMenuBtn) {
+            aboutOpenMenuBtn.addEventListener('click', function () {
+              closeDialog('about-modal');
+              activeCategory = 'All';
+              renderMenuModal();
+              openDialog('menu-modal');
+            });
+          }
+
+          const prevBtn = document.getElementById('testimonial-prev-btn');
+          if (prevBtn) {
+            prevBtn.addEventListener('click', function () {
+              currentTestimonialIndex = getNextTestimonialIndex(currentTestimonialIndex, TESTIMONIALS.length, 'prev');
+              renderTestimonial();
+            });
+          }
+
+          const nextBtn = document.getElementById('testimonial-next-btn');
+          if (nextBtn) {
+            nextBtn.addEventListener('click', function () {
+              currentTestimonialIndex = getNextTestimonialIndex(currentTestimonialIndex, TESTIMONIALS.length, 'next');
+              renderTestimonial();
+            });
+          }
+
+          document.querySelectorAll('.testimonial-dot').forEach(function (dot) {
+            dot.addEventListener('click', function () {
+              currentTestimonialIndex = Number(dot.getAttribute('data-slide') || '0');
+              renderTestimonial();
+            });
+          });
+
+          document.querySelectorAll('.faq-item').forEach(function (item) {
+            const faqId = item.getAttribute('data-faq-id');
+            const btn = item.querySelector('.faq-question-btn');
+            const panel = item.querySelector('.faq-answer-panel');
+            if (!faqId || !btn || !panel) return;
+
+            btn.addEventListener('click', function () {
+              if (openFaqs.has(faqId)) {
+                openFaqs.delete(faqId);
+              } else {
+                openFaqs.add(faqId);
+              }
+              const isOpen = openFaqs.has(faqId);
+              btn.setAttribute('aria-expanded', String(isOpen));
+              panel.hidden = !isOpen;
+            });
+          });
+
+          const callBtn = document.getElementById('btn-call-us');
+          if (callBtn) {
+            callBtn.addEventListener('click', function () {
+              openContactModal('call');
+            });
+          }
+
+          const waBtn = document.getElementById('btn-whatsapp-us');
+          if (waBtn) {
+            waBtn.addEventListener('click', function () {
+              openContactModal('whatsapp');
+            });
+          }
+
+          const findBtn = document.getElementById('btn-find-us');
+          if (findBtn) {
+            findBtn.addEventListener('click', function () {
+              openContactModal('map');
+            });
+          }
+
+          document.querySelectorAll('[data-social]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              const platform = btn.getAttribute('data-social') || 'Social Media';
+              showToast('Follow @thebrewhouse.ghaziabad on ' + platform + ' for daily fresh brews & acoustic nights!');
+            });
+          });
+
+          document.addEventListener('click', function (e) {
+            const target = e.target;
+            if (!target || typeof target.closest !== 'function') return;
+            const closeBtn = target.closest('[data-close-modal]');
+            if (closeBtn) {
+              const modalId = closeBtn.getAttribute('data-close-modal');
+              if (modalId) closeDialog(modalId);
+            }
+          });
+
+          document.querySelectorAll('dialog.brew-modal').forEach(function (dialog) {
+            dialog.addEventListener('click', function (e) {
+              if (e.target === dialog) {
+                dialog.close();
+              }
+            });
+          });
+
+          renderMenuModal();
+          renderTestimonial();
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initBrewHouseApp);
+        } else {
+          initBrewHouseApp();
+        }
+      })();
+    </script>
+  </body>
+</html>
